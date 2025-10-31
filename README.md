@@ -1,5 +1,5 @@
 
-# Circular Buffer with Message Classification
+# Circular Buffer
 
 A production-grade cyclic buffer, implementing FIFO semantics for fixed-format sensor messages with automatic type classification**, dynamic resizing, and error handling.
 
