@@ -29,15 +29,15 @@ Supports three message types:
 - Invalid sensor ID
 - Malformed GPS 
 - Resize during full/partial fill
-- Resize rejection when `overwrite=False`
+- Resize rejection when overwrite=False
 - Data loss tracking on shrink
-- GPS edge values: `±180.000000`, `±90.000000`
+- GPS edge values: ±180.000000, ±90.000000
 - Zero-capacity prevention
 - Max capacity = 100
 
 ---
 
-## Test Suite
+## Test 
 
 | # | Test Case |
 |---|-----------|
