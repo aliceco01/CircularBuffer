@@ -1,0 +1,1 @@
+#Factory function/class to parse string and create appropriate message object
