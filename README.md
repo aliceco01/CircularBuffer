@@ -1,7 +1,7 @@
 
 # Circular Buffer with Message Classification
 
-A **production-grade cyclic buffer** implementing **FIFO semantics** for fixed-format sensor messages with **automatic type classification**, **dynamic resizing**, and **robust error handling**.
+A production-grade cyclic buffer, implementing FIFO semantics for fixed-format sensor messages with automatic type classification**, dynamic resizing, and error handling.
 
 Supports three message types:
 - `GPS`: Location (longitude, latitude)
@@ -22,32 +22,32 @@ Supports three message types:
 
 ---
 
-## Edge Cases Handled
+## Edge Cases 
 
-- [x] Push to full buffer (with/without overwrite)
-- [x] Pop from empty buffer
-- [x] Invalid sensor ID (`"ABC"`, `1000`)
-- [x] Malformed GPS (`+91.0`, `+180.000001`, missing sign)
-- [x] Resize during full/partial fill
-- [x] Resize rejection when `overwrite=False`
-- [x] Data loss tracking on shrink
-- [x] GPS edge values: `±180.000000`, `±90.000000`
-- [x] Zero-capacity prevention
-- [x] Max capacity = 100 (memory safety)
+- Push to full buffer (with/without overwrite)
+- Pop from empty buffer
+- Invalid sensor ID
+- Malformed GPS 
+- Resize during full/partial fill
+- Resize rejection when `overwrite=False`
+- Data loss tracking on shrink
+- GPS edge values: `±180.000000`, `±90.000000`
+- Zero-capacity prevention
+- Max capacity = 100
 
 ---
 
-## Test Suite (`test_circular_buffer.py`)
+## Test Suite
 
 | # | Test Case |
 |---|-----------|
-| 1 | FIFO ordering preserved |
-| 2 | Overflow → exception + `overflow_flag` |
+| 1 | FIFO ordering 
+| 2 | Overflow - `overflow_flag` 
 | 3 | Overwrite mode replaces oldest |
-| 4 | Underflow → exception + `underflow_flag` |
-| 5 | Resize expand → no data loss |
-| 6 | Resize shrink → no loss when size ≤ new_capacity |
-| 7 | Resize shrink + overwrite → discards oldest + sets `data_loss_resize` |
+| 4 | Underflow  `underflow_flag` exception |
+| 5 | Resize expand  |
+| 6 | Resize shrink  when size ≤ new_capacity |
+| 7 | Resize shrink -  overwrite  discards oldest + sets `data_loss_resize` |
 | 8 | Resize reject when `overwrite=False` and data would be lost |
 | 9 | Invalid message → skipped with warning |
 | 10 | GPS coordinate edge cases |
